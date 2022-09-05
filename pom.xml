@@ -5,7 +5,7 @@
 
 	<groupId>nizami.bot</groupId>
 	<artifactId>coursebot</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<name>coursebot</name>
 
@@ -14,6 +14,14 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/devAgant/LTCometCourseBot</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
