@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import javax.security.auth.login.LoginException;
 
+import nizami.bot.coursebot.BotBuilder;
+
 public class CourseBot {
 
 	public static void main(String[] args) {
