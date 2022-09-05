@@ -24,5 +24,7 @@ jobs:
         cache: maven
     - name: Build and Test
       uses: qcastel/github-actions-maven-cmd@master
+      env:
+        JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
       with:
         maven-args: "clean install"
