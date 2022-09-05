@@ -11,8 +11,8 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 import net.dv8tion.jda.api.sharding.ShardManager;
-import nizami.coursebot.commands.CommandManager;
-import nizami.coursebot.listeners.ReactionListener;
+import nizami.bot.coursebot.commands.CommandManager;
+import nizami.bot.coursebot.listeners.ReactionListener;
 
 public class BotBuilder {
 	private final ShardManager shardManager;
