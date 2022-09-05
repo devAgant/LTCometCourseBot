@@ -25,4 +25,5 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
         files: |
-          **/target/coursebot-*.jar 
+          **/target/coursebot-*.jar
+      id: "automatic_releases"
