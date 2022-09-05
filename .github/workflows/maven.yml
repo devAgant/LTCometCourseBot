@@ -22,9 +22,13 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Build and Test
-      uses: qcastel/github-actions-maven-cmd@master
-      env:
-        JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    - uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        maven-args: "clean install"
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Development Build"
+        files: |
+          *.jar 
