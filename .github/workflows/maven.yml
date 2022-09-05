@@ -26,8 +26,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: "Build & test"
       run: |
-        echo "done!"
-        
+        echo "done!"      
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
