@@ -19,12 +19,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml    
-      # ...
-    - name: "Build & test"
-      run: |
-        echo "done!"
-
+      run: mvn -B package --file pom.xml
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
