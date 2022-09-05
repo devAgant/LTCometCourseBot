@@ -31,4 +31,4 @@ jobs:
         prerelease: true
         title: "Development Build"
         files: |
-          **/*.jar 
+          **/*coursebot*.jar 
