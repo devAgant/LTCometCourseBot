@@ -26,4 +26,3 @@ jobs:
         prerelease: false
         files: |
           **/target/coursebot-*.jar
-      id: "automatic_releases"
