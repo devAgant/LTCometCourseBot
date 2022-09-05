@@ -23,10 +23,13 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: Release
-      uses: qcastel/github-actions-maven-release@master
+      run: mvn -B install --file pom.xml
+    - name: "Release"
+    - uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        release-branch-name: "latest"
-        version-patch: true
-      
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Development Build"
+        files: |
+          *.jar      
