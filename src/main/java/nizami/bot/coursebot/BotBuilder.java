@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import javax.security.auth.login.LoginException;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
@@ -16,10 +17,13 @@ import nizami.bot.coursebot.listeners.ReactionListener;
 
 public class BotBuilder {
 	private final ShardManager shardManager;
+	private final Dotenv config;
 
 	public BotBuilder() throws LoginException, IllegalArgumentException, IOException {
 		// Load the bot
-		String token = "MTAxMTM2NTU2MDQzNDU1NjkyOA.GoJ50l.p2dky71AIPOpF-6-bT_kJ02GmEyFaESZD5x97s";
+		
+		config = Dotenv.configure().load();
+		String token = config.get("TOKEN");
 		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(token);
 		builder.setStatus(OnlineStatus.ONLINE);
 		builder.enableIntents(GatewayIntent.GUILD_MESSAGE_REACTIONS, GatewayIntent.GUILD_MESSAGES,
